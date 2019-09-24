@@ -1,0 +1,48 @@
+body {
+    background-color: #283149;
+    text-align: center;
+}
+
+h1 {
+    color: #DBEDF3;
+    font-family: "Arvo", cursive;
+    font-size: 5rem;
+    text-shadow: 3px 0 #DA0463;
+}
+
+footer {
+    color: #DBEDF3;
+    font-family: sans-serif;
+}
+
+.button_w-drum {
+
+} 
+
+.button_a-drum {
+
+} 
+
+.button_s-drum {
+
+} 
+
+.button_d-drum {
+
+} 
+
+.button_j-drum {
+
+} 
+
+.button_k-drum {
+
+} 
+
+.button_l-drum {
+
+} 
+
+.set {
+    margin: 10% auto;
+}
