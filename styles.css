@@ -15,34 +15,66 @@ footer {
     font-family: sans-serif;
 }
 
-.button_w-drum {
+.button-w {
 
 } 
 
-.button_a-drum {
+.button-a {
 
 } 
 
-.button_s-drum {
+.button-s {
 
 } 
 
-.button_d-drum {
+.button-d {
 
 } 
 
-.button_j-drum {
+.button-j {
 
 } 
 
-.button_k-drum {
+.button-k {
 
 } 
 
-.button_l-drum {
+.button-l {
 
 } 
 
 .set {
     margin: 10% auto;
+}
+
+.game-over {
+    background-color: red;
+    opacity: 0.8;
+}
+
+.pressed {
+    box-shadow: 0 3px 4px 0 #DBEDF3;
+    opacity: 0.5;
+}
+
+.red {
+    color: red;
+}
+
+.drum {
+    background-color: white;
+    border: 10px solid #404B69;
+    border-radius: 15px;
+    color: #DA0463;
+    display: inline-block;
+    font-family: "Arvo", cursive;
+    font-size: 5rem;
+    font-weight: 900;
+    height: 150px;
+    line-height: 2;
+    margin: 10px;
+    outline: none;
+    text-align: center;
+    text-shadow: 3px 0 #DBEDF3;
+    width: 150px;
 }
