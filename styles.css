@@ -16,31 +16,31 @@ footer {
 }
 
 .button-w {
-
+    background-image: url("img/crash.png");
 } 
 
 .button-a {
-
+    background-image: url("img/kick.png")
 } 
 
 .button-s {
-
+    background-image: url("img/snare.png")
 } 
 
 .button-d {
-
+    background-image: url("img/tom1.png")
 } 
 
 .button-j {
-
+    background-image: url("img/tom2.png")
 } 
 
 .button-k {
-
+    background-image: url("img/tom3.png")
 } 
 
 .button-l {
-
+    background-image: url("img/tom4.png")
 } 
 
 .set {
