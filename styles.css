@@ -43,8 +43,19 @@ footer {
     background-image: url("img/tom4.png")
 } 
 
+.button-x {
+    background-image: url("img/spoon.png")
+}
+
 .set {
-    margin: 10% auto;
+    margin: 10% 10% 5% 10%;
+}
+
+.instructions {
+    color: #DBEDF3;
+    font-family: "Arvo", cursive;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .game-over {
