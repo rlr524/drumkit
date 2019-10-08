@@ -1,10 +1,18 @@
-// create an event listener for all seven buttons with a function that generates the sound files
+// detect press of on-screen buttons with mouse clicks
 let numberDrumButtons = document.querySelectorAll(".drum").length;
 for (let i = 0; i<numberDrumButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function() {
-        let buttonInnerHTML = this.innerHTML;
-
-        switch (buttonInnerHTML) {
+        var buttonInnerHTML = this.innerHTML;
+        makeSound(buttonInnerHTML);
+    });
+}
+// detect press of keyboard keys
+document.addEventListener("keydown", function(e) {
+    makeSound(e.key);
+});
+// function for all seven buttons with a that generates the sound files
+function makeSound(key) {
+        switch (key) {
             case "w":
                 var crash = new Audio("sounds/crash.mp3");
                 crash.play();
@@ -29,19 +37,17 @@ for (let i = 0; i<numberDrumButtons; i++) {
                 var tomThree = new Audio("sounds/tom-3.mp3");
                 tomThree.play();
                 break;
-            // case "l":
-            //     var tomFour = new Audio("sounds/tom-4.mp3");
-            //     tomFour.play();
-            //     break;
+            case "l":
+                var tomFour = new Audio("sounds/tom-4.mp3");
+                tomFour.play();
+                break;
             case "x":
                 var spoon = new Audio("sounds/1152.mp3");
                 spoon.play();
                 break;
             default:
-                alert("Uh oh, something went wrong. We'll get the 'x' for this, but in the meantime, try again.");
-                console.log("Ritsu's Drumkit: The " + buttonInnerHTML + " button was pressed and something went wrong.")
+                alert("Uh oh, something went wrong. We'll get an 'x' for this, but in the meantime, try again.");
+                console.log("Ritsu's Drumkit: The " + "'" + key + "'" + " was pressed and something went wrong.")
                 break;
         }
-    });
-}
-
+    }
