@@ -15,40 +15,41 @@ footer {
     font-family: sans-serif;
 }
 
-.button-w {
+.w {
     background-image: url("img/crash.png");
 } 
 
-.button-a {
+.a {
     background-image: url("img/kick.png")
 } 
 
-.button-s {
+.s {
     background-image: url("img/snare.png")
 } 
 
-.button-d {
+.d {
     background-image: url("img/tom1.png")
 } 
 
-.button-j {
+.j {
     background-image: url("img/tom2.png")
 } 
 
-.button-k {
+.k {
     background-image: url("img/tom3.png")
 } 
 
-.button-l {
+.l {
     background-image: url("img/tom4.png")
 } 
 
-.button-x {
-    background-image: url("img/spoon.png")
-}
-
 .set {
     margin: 10% 10% 5% 10%;
+}
+
+.pressed {
+    box-shadow: 0 3px 4px 0 #DBEDF3;
+    opacity: 0.5;
 }
 
 .instructions {

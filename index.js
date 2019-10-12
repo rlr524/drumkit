@@ -4,11 +4,13 @@ for (let i = 0; i<numberDrumButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function() {
         var buttonInnerHTML = this.innerHTML;
         makeSound(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
     });
 }
 // detect press of keyboard keys
 document.addEventListener("keydown", function(e) {
     makeSound(e.key);
+    buttonAnimation(e.key);
 });
 // function for all seven buttons with a that generates the sound files
 function makeSound(key) {
@@ -41,13 +43,17 @@ function makeSound(key) {
                 var tomFour = new Audio("sounds/tom-4.mp3");
                 tomFour.play();
                 break;
-            case "x":
-                var spoon = new Audio("sounds/1152.mp3");
-                spoon.play();
-                break;
             default:
-                alert("Uh oh, something went wrong. We'll get an 'x' for this, but in the meantime, try again.");
+                alert("Uh oh, either you pressed a key other than w, a, s, d, j, k or l, or something went wrong. Try reloading the page and try again. This issue has been logged.");
                 console.log("Ritsu's Drumkit: The " + "'" + key + "'" + " was pressed and something went wrong.")
                 break;
         }
+    }
+    // function to add shading when button is pressed or clicked using .pressed class in css
+    function buttonAnimation(currentKey) {
+        var activeButton = document.querySelector("." + currentKey);
+        activeButton.classList.add("pressed"); // don't need to add the class . here when naming the new class being added, as already identifying that it's a class
+        setTimeout(function() {
+            activeButton.classList.remove("pressed");
+        }, 100); // added a setTimeout method with anon function to remove the .pressed class after 1/10th of a second (100 milleseconds)
     }
