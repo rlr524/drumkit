@@ -1,5 +1,5 @@
 // detect press of on-screen buttons with mouse clicks
-$(".drum").click(function() {
+$(".drum").on("click", function() {
     var buttonInnerHTML = $(this).text();
     makeSound(buttonInnerHTML);
     buttonAnimation(buttonInnerHTML);
@@ -8,7 +8,7 @@ $(".drum").click(function() {
 
 // need to reference the whole document here as there is no direct reference to the innerHTML...but because we've already called the
 // .drum click unction above, they still work correctly
-$(document).keydown(function(e) {
+$(document).on("keydown", function(e) {
     makeSound(e.key);
     buttonAnimation(e.key);
     headerAnimation(e.key);
