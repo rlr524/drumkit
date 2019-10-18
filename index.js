@@ -1,17 +1,32 @@
 // detect press of on-screen buttons with mouse clicks
-let numberDrumButtons = document.querySelectorAll(".drum").length;
-for (let i = 0; i<numberDrumButtons; i++) {
-    document.querySelectorAll(".drum")[i].addEventListener("click", function() {
-        var buttonInnerHTML = this.innerHTML;
-        makeSound(buttonInnerHTML);
-        buttonAnimation(buttonInnerHTML);
-    });
-}
-// detect press of keyboard keys
-document.addEventListener("keydown", function(e) {
+$(".drum").on("click", function() {
+    var buttonInnerHTML = $(this).text();
+    makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
+    headerAnimation(buttonInnerHTML);
+});
+
+$(".drum").on("keydown", function(e) {
     makeSound(e.key);
     buttonAnimation(e.key);
+    headerAnimation(e.key);
 });
+// let numberDrumButtons = $(".drum").length;
+// for (let i = 0; i<numberDrumButtons; i++) {
+//     $(".drum")[i].addEventListener("click", function() {
+//         var buttonInnerHTML = this.innerHTML;
+//         makeSound(buttonInnerHTML);
+//         buttonAnimation(buttonInnerHTML);
+//         headerAnimation(buttonInnerHTML);
+//     });
+// }
+
+// detect press of keyboard keys
+// document.addEventListener("keydown", function(e) {
+//     makeSound(e.key);
+//     buttonAnimation(e.key);
+//     headerAnimation(e.key);
+// });
 // function for all seven buttons with a that generates the sound files
 function makeSound(key) {
         switch (key) {
@@ -57,3 +72,12 @@ function makeSound(key) {
             activeButton.classList.remove("pressed");
         }, 100); // added a setTimeout method with anon function to remove the .pressed class after 1/10th of a second (100 milleseconds)
     }
+    function headerAnimation() {
+        var activeButtonHeader = document.querySelector("h1");
+        activeButtonHeader.classList.add("red");
+        setTimeout(function() {
+            activeButtonHeader.classList.remove("red");
+        }, 100);
+    }
+
+
