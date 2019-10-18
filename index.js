@@ -1,16 +1,20 @@
 // detect press of on-screen buttons with mouse clicks
-$(".drum").on("click", function() {
+$(".drum").click(function() {
     var buttonInnerHTML = $(this).text();
     makeSound(buttonInnerHTML);
     buttonAnimation(buttonInnerHTML);
     headerAnimation(buttonInnerHTML);
 });
 
-$(".drum").on("keydown", function(e) {
+// need to reference the whole document here as there is no direct reference to the innerHTML...but because we've already called the
+// .drum click unction above, they still work correctly
+$(document).keydown(function(e) {
     makeSound(e.key);
     buttonAnimation(e.key);
     headerAnimation(e.key);
 });
+
+// this the old code, pre jQuery refactor
 // let numberDrumButtons = $(".drum").length;
 // for (let i = 0; i<numberDrumButtons; i++) {
 //     $(".drum")[i].addEventListener("click", function() {
@@ -59,7 +63,8 @@ function makeSound(key) {
                 tomFour.play();
                 break;
             default:
-                alert("Uh oh, either you pressed a key other than w, a, s, d, j, k or l, or something went wrong. Try reloading the page and try again. This issue has been logged.");
+                alert("Uh oh, either you pressed a key other than w, a, s, d, j, k or l, or something went wrong. " + 
+                "Try reloading the page and try again. This issue has been logged.");
                 console.log("Ritsu's Drumkit: The " + "'" + key + "'" + " was pressed and something went wrong.")
                 break;
         }
@@ -67,7 +72,8 @@ function makeSound(key) {
     // function to add shading when button is pressed or clicked using .pressed class in css
     function buttonAnimation(currentKey) {
         var activeButton = document.querySelector("." + currentKey);
-        activeButton.classList.add("pressed"); // don't need to add the class . here when naming the new class being added, as already identifying that it's a class
+        activeButton.classList.add("pressed"); // don't need to add the class . here when naming the new class being added, as already 
+        // identifying that it's a class
         setTimeout(function() {
             activeButton.classList.remove("pressed");
         }, 100); // added a setTimeout method with anon function to remove the .pressed class after 1/10th of a second (100 milleseconds)
